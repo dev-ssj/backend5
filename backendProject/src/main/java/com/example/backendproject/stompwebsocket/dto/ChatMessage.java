@@ -11,9 +11,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ChatMessage {
+
     private String message;
     private String from;
 
-    private String to;  //귓속말을 받을 사람
-    private String roomId;  //방 id
+    private String to; //귓속말을 받을 사람
+    private String roomId; //방 id
 }
