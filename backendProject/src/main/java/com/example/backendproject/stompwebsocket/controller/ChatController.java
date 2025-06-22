@@ -1,6 +1,7 @@
 package com.example.backendproject.stompwebsocket.controller;
 
 import com.example.backendproject.stompwebsocket.dto.ChatMessage;
+import com.example.backendproject.stompwebsocket.gpt.GPTService;
 import com.example.backendproject.stompwebsocket.redis.RedisPublisher;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,12 +20,29 @@ public class ChatController {
     //서버가 클라이언트에게 수동으로 메세지를 보낼 수 있도록 하는 클래스
     private final SimpMessagingTemplate template;
 
-    //동적으로 방 생성 가능
+    //환경 변수를 받아서 화면에 출력
     @Value("${PROJECT_NAME:web Server}")
     private String instansName;
-
     private final RedisPublisher redisPublisher;
     private ObjectMapper objectMapper  = new ObjectMapper();
+
+    //GPT 호출 서비스
+    private final GPTService gptService;
+
+    /*GPT 응답 처리용 엔드포인트*/
+    //클라이언트가 /app/gpt로 메시지를 보냄
+    @MessageMapping("/gpt")
+    public void sendMessageGPT(ChatMessage message) throws Exception{
+
+        template.convertAndSend("/topic/gpt",message);//내가 보낸 메시지 출력
+
+        //사용자가 보낸 메시지를 받음. gpt 목적지 반환
+        String getResponse = gptService.getMessage(message.getMessage());
+
+        ChatMessage chatMessage = new ChatMessage("난 GPT ", getResponse);
+
+        template.convertAndSend("/topic/gpt", chatMessage);
+    }
 
     @MessageMapping("/chat.sendMessage")
     public void sendmessage(ChatMessage message) throws JsonProcessingException {
