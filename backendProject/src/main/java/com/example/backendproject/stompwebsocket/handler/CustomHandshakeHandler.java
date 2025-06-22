@@ -16,7 +16,7 @@ public class CustomHandshakeHandler extends DefaultHandshakeHandler {
                                       Map<String, Object> attributes) {
 
         String nickname = getNickname(request.getURI().getQuery());
-        return new StompPrincipal(nickname);
+        return new StompPricipal(nickname);
     }
     //요청이 들어오면 닉네임을 추출해서 닉네임이 없으면 닉네임 없음 출력, 있으면 사용자 추출하는 핸들러
     private String getNickname(String query){
