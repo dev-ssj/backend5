@@ -3,6 +3,7 @@ package com.example.backendproject.stompwebsocket.redis;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
@@ -11,6 +12,7 @@ import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 /*
 * Redis 메시지 리스너 설정 
 */
+@Profile("!test") //테스트 시 redis는 무시한다.
 @Configuration
 @RequiredArgsConstructor
 public class RedisConfig {
