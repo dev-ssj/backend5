@@ -20,6 +20,7 @@ public class AuthService {
     @Transactional
     public void signUp(SignUpRequestDTO dto){
 
+        //isPresent() : Optinal의 값이 들었는지 확인. 값이 없으면 false, 있으면 true
         if (userRepository.findByUserid(dto.getUserid()).isPresent()){
             throw new RuntimeException("사용자가 이미 존재합나다.");
         }

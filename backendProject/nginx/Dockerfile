@@ -2,6 +2,7 @@ FROM nginx:latest
 
 #젠킨스에 올릴 때, 우리가 만든 설정파일이 설정되지않음
 #-> 여기서 nginx.conf복사를 해서 강제적으로 덮어씌운다.
+#nginx 컨테이너 생성
 
 #기존 설정 제거(선택적)
 RUN rm /etc/nginx/nginx.conf

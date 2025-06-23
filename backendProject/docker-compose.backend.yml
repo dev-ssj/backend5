@@ -89,3 +89,5 @@ services:
 networks:
   prod_server:
     external: true
+    #external 설정이 없으면 docker-compose가 prod_server라는 이름의 네트워크를 새로 만든다.
+    #external:true 이면 이미 만들어진 외부 네트워크를 재사용하겠다는 뜻! 여러 컴포즈 파일이나 여러 컨테이너에서 하나의 네트워크를 공유하고 싶을 때 사용

@@ -1,3 +1,4 @@
+#jenkins컨테이너 실행 방식
 services:
   jenkins:
     build: .
@@ -10,7 +11,6 @@ services:
       - ./volumes/jenkins:/var/jenkins_home
       - ./kubeconfig:/root/.kube
       - /var/run/docker.sock:/var/run/docker.sock
-      #  - C:\Users\dmstl\Intellij-Workspace\backend5:/var/jenkins_home/workspace/backend5  # 프로젝트 연결  (은시기 노트북)
       - C:\backend5\backendProject:/var/jenkins_home/workspace/backend5/backendProject
     restart: unless-stopped
     networks:

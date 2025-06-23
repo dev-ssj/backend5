@@ -1,7 +1,7 @@
 services:
 
   # docker network  create prod_server     도커 네트워크 만들어야 함!
-
+#redis 컨테이너 생성
   redis:
     image: redis
     container_name: redis
@@ -11,12 +11,12 @@ services:
       - prod_server
     restart: unless-stopped
 
-
+#database 컨테이너 생성
   database:
     image: mysql:8
     container_name: database
     ports:
-      - "3307:3306"
+      - "3307:3306"     # 3307 : 내 로컬 컴퓨터에서 접근할 수 있는 포트(localhost:3307), 3306:컨테이너 내부 mysql포트
     environment:
       MYSQL_DATABASE: backendDB
       MYSQL_ROOT_PASSWORD: ${DB_PASS}
@@ -30,7 +30,7 @@ services:
       - prod_server
     restart: unless-stopped
 
-
+#네트워크 설정
 networks:
   prod_server:
     external: true
