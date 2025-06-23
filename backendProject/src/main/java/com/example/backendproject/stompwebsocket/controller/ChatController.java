@@ -39,7 +39,7 @@ public class ChatController {
         //사용자가 보낸 메시지를 받음. gpt 목적지 반환
         String getResponse = gptService.getMessage(message.getMessage());
 
-        ChatMessage chatMessage = new ChatMessage("난 GPT ", getResponse);
+        ChatMessage chatMessage = new ChatMessage("난 GPT(젠킨스)", getResponse);
 
         template.convertAndSend("/topic/gpt", chatMessage);
     }

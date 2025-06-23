@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     PROJECT_DIR = 'backendProject'       // 백앤드 서버 프로젝트 폴더
-    COMPOSE_DIR = '.'                     //  프로젝트 루트 폴더에서 docker-compose.yml 실행
+    COMPOSE_DIR = '.'                 //  프로젝트 루트 폴더에서 docker-compose.yml 실행
     IMAGE_NAME = 'backend'
   }
 
