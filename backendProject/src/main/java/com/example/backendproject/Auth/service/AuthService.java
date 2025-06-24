@@ -2,7 +2,8 @@ package com.example.backendproject.Auth.service;
 
 import com.example.backendproject.Auth.dto.LoginRequestDTO;
 import com.example.backendproject.Auth.dto.SignUpRequestDTO;
-import com.example.backendproject.user.dto.UserDto;
+import com.example.backendproject.user.dto.UserDTO;
+import com.example.backendproject.user.dto.UserProfileDTO;
 import com.example.backendproject.user.entity.User;
 import com.example.backendproject.user.entity.UserProfile;
 import com.example.backendproject.user.repository.UserRepository;
@@ -14,8 +15,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class AuthService {
 
-    private final UserRepository userRepository;
 
+
+    private final UserRepository userRepository;
 
     @Transactional
     public void signUp(SignUpRequestDTO dto){
@@ -44,25 +46,28 @@ public class AuthService {
 
 
 
-    public UserDto login(LoginRequestDTO loginRequestDTO){
+    public UserDTO login(LoginRequestDTO loginRequestDTO){
         User user = userRepository.findByUserid(loginRequestDTO.getUserid())
                 .orElseThrow(()->new RuntimeException("해당 유저를 찾을 수 없습니다."));
-
         if (!loginRequestDTO.getPassword().equals(user.getPassword())){
             throw new RuntimeException("비밀번호가 일치 하지 않습니다.");
         }
 
-        UserDto userDTO = new UserDto();
+        UserDTO userDTO = new UserDTO();
         userDTO.setId(user.getId());
         userDTO.setUserid(user.getUserid());
 
-        userDTO.setUsername(user.getUserProfile().getUsername());
-        userDTO.setEmail(user.getUserProfile().getEmail());
-        userDTO.setPhone(user.getUserProfile().getPhone());
-        userDTO.setAddress(user.getUserProfile().getAddress());
+
+        //유저 프로필
+        UserProfileDTO profileDTO = new UserProfileDTO();
+        profileDTO.setUsername(user.getUserProfile().getUsername());
+        profileDTO.setEmail(user.getUserProfile().getEmail());
+        profileDTO.setPhone(user.getUserProfile().getPhone());
+        profileDTO.setAddress(user.getUserProfile().getAddress());
 
         return userDTO;
 
     }
+
 
 }

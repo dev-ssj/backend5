@@ -3,7 +3,7 @@ package com.example.backendproject.Auth.controller;
 import com.example.backendproject.Auth.dto.LoginRequestDTO;
 import com.example.backendproject.Auth.dto.SignUpRequestDTO;
 import com.example.backendproject.Auth.service.AuthService;
-import com.example.backendproject.user.dto.UserDto;
+import com.example.backendproject.user.dto.UserDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,7 +20,7 @@ public class AuthController {
 
     private final AuthService authService;
 
-    /** 회원가입 **/
+    /** 회원 가입 **/
     @PostMapping("/signUp")
     public ResponseEntity<String> singUp(@RequestBody SignUpRequestDTO signUpRequestDTO){
         try {
@@ -34,10 +34,10 @@ public class AuthController {
 
     /** 로그인 **/
     @PostMapping("/login")
-    public ResponseEntity<UserDto> login(@RequestBody LoginRequestDTO loginRequestDTO){
+    public ResponseEntity<UserDTO> login(@RequestBody LoginRequestDTO loginRequestDTO){
         try {
 
-            UserDto loginUser = authService.login(loginRequestDTO);
+            UserDTO loginUser = authService.login(loginRequestDTO);
 
             System.out.println("로그인 성공 = "+new ObjectMapper().writeValueAsString(loginUser));
 

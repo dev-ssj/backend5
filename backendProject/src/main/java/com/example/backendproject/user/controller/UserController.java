@@ -1,20 +1,31 @@
 package com.example.backendproject.user.controller;
 
+import com.example.backendproject.user.dto.UserDTO;
+import com.example.backendproject.user.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/user") //변경
+@RequiredArgsConstructor
 public class UserController {
 
-    //docker 서버 :8080로 지정된 서버가 있으면 실행안됨!
-    @Value("${PROJECT_NAME:web server}")
-    private String instansName;
+    private final UserService userService;
 
-    @GetMapping
-    public String test(){
-        return instansName;
+    /** 내 정보 보기 **/
+    @GetMapping("/me/{id}")
+    public ResponseEntity<UserDTO> getMyInfo(@PathVariable("id") Long userId) {
+        return ResponseEntity.ok(userService.getMyInfo(userId));
     }
+
+    /** 유저 정보 수정 **/
+    @PutMapping("/me/{id}")
+    public ResponseEntity<UserDTO> updateUser(@PathVariable("id") Long userId, @RequestBody UserDTO dto)  {
+        UserDTO updated = userService.updateUser(userId, dto);
+        return ResponseEntity.ok(updated);
+    }
+
+
 }
