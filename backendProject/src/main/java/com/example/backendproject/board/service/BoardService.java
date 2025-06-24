@@ -139,7 +139,7 @@ public class BoardService {
         for (int i = 0; i < boardDTOList.size(); i+=batchsize) { //i는 1000씩 증가
             //전체 데이터를 1000개씩 잘라서 배치리스트에 담습니다.
 
-            int end = Math.min(boardDTOList.size(), i+batchsize); //두개의 숫자중에 작은 숫자를 반환
+            int end = Math.min(boardDTOList.size(), i+batchsize); //두개의 숫자중에 작은 숫자를 반환(총 4530개면 마지막은 530개 → 이걸 정확히 잘라내기 위한 계산)
             List<BoardDTO> batchList = boardDTOList.subList(i, end);
 
             //전체 데이터에서 1000씩 작업을 하는데 마지막 데이터가 1000개가 안될수도있으니
@@ -151,11 +151,8 @@ public class BoardService {
             for (BoardDTO dto : batchList) {
                 dto.setBatchkey(batchKey);
             }
-
-
             // 1. MySQL로 INSERT
             batchRepository.batchInsert(batchList);
-
         }
 
         Long end = System.currentTimeMillis();
@@ -168,11 +165,14 @@ public class BoardService {
     public void boardSaveAll(List<Board> boardList){
         long start = System.currentTimeMillis();
 
+        //persist()만 계속 하면 엔티티들이 영속성 컨텍스트에 계속 쌓임 -> 메모리 문제
+        //1000개마다 flush로 DB에 실제 INSERT하고, clear로 메모리 비우고 비영속 객체로 만드는것.
+        //천 개를 하나씩 INSERT SQL로 쌓아뒀다가 전송
         for(int i = 0; i< boardList.size(); i++){
-            em.persist(boardList.get(i));
+            em.persist(boardList.get(i));   //엔티티를 영속성 컨텍스트에만 저장.
             if(i%1000 == 0) {
-                em.flush();
-                em.clear();
+                em.flush(); //DB INSERT SQL은 여기서 전송됨!
+                em.clear(); //영속성 컨텍스트에 존재하는 모든 엔티티를 비영속 객체로 만듬.
             }
         }
         long end = System.currentTimeMillis();

@@ -19,7 +19,7 @@ public class BatchRepository {
     public void batchInsert(List<BoardDTO> boardDTO){
 
         String sql = "INSERT INTO board (title, content, user_id, created_date, updated_date,batchkey) VALUES (?, ?, ?, ?, ?,?)";
-        jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
+        jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {  //sql을 JDBC batch모드로 실행
             @Override
             public void setValues(PreparedStatement ps, int i) throws SQLException {
                 BoardDTO dto = boardDTO.get(i);
@@ -34,7 +34,7 @@ public class BatchRepository {
             @Override
             public int getBatchSize() {
                 return boardDTO.size();
-            }
+            }   //1000Q번 INSERT 반복
         });
     }
 
