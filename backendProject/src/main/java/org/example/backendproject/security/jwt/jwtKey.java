@@ -9,7 +9,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
 
 @Configuration
-public class JwtKey {
+public class jwtKey {
 
     @Value("${jwt.secretKey}")
     private String secretKey;
