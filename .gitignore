@@ -41,5 +41,5 @@ Data/volumes
 backendProject/.gradle
 backendProject/.idea
 backendProject/build
-
+logs/
 .sock

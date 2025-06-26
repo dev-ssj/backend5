@@ -1,0 +1,21 @@
+package org.example.backendproject.exception;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+public class ErrorResponse {
+    private int code;   //상태코드
+    private String message; //커스텀 에러 메시지
+    private String detail;  //실제 에러 메세지
+
+
+    public static ErrorResponse of(ErrorCode errorCode) {
+        return new ErrorResponse(errorCode.getCode(), errorCode.getMessage(), null);
+    }
+
+    public static ErrorResponse of(ErrorCode errorCode, String detail) {
+        return new ErrorResponse(errorCode.getCode(), errorCode.getMessage(), detail);
+    }
+}

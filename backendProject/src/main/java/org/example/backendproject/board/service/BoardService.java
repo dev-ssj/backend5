@@ -67,11 +67,13 @@ public class BoardService {
     /** 게시글 수정 **/
     @Transactional
     public BoardDTO updateBoard(Long boardId, BoardDTO dto) {
+
         Board board = boardRepository.findById(boardId)
                 .orElseThrow(() -> new IllegalArgumentException("게시글 없음: " + boardId));
         board.setTitle(dto.getTitle());
         board.setContent(dto.getContent());
         boardRepository.save(board);
+
         return toDTO(board);
     }
 
@@ -89,6 +91,8 @@ public class BoardService {
             throw new IllegalArgumentException("게시글 없음: " + boardId);
 
         boardRepository.deleteById(boardId);
+
+
     }
     
 
@@ -169,7 +173,7 @@ public class BoardService {
         }
 
         long end = System.currentTimeMillis();
-        System.out.println("JPA Board saveAll 저장 소요 시간(ms): " + (end - start));
+        log.info("JPA Board saveAll 저장 소요 시간(ms): " + (end - start));
     }
 
 

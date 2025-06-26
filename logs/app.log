@@ -1,0 +1,665 @@
+2025-06-29 00:24:22.077 [restartedMain] [INFO] o.e.b.BackendProjectApplication - Starting BackendProjectApplication using Java 17.0.12 with PID 21420 (C:\backend5\backendProject\build\classes\java\main started by win11 in C:\backend5)
+2025-06-29 00:24:22.082 [restartedMain] [INFO] o.e.b.BackendProjectApplication - The following 1 profile is active: "dev"
+2025-06-29 00:24:22.175 [restartedMain] [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-29 00:24:22.176 [restartedMain] [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-29 00:24:24.656 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-29 00:24:24.660 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-29 00:24:25.187 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 510 ms. Found 5 JPA repository interfaces.
+2025-06-29 00:24:25.218 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-29 00:24:25.220 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-06-29 00:24:25.257 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.backendproject.Auth.repository.AuthRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-29 00:24:25.261 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.backendproject.board.repository.BoardRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-29 00:24:25.262 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.backendproject.comment.repository.CommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-29 00:24:25.263 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.backendproject.purewebsocket.room.repository.RoomRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-29 00:24:25.263 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.backendproject.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-29 00:24:25.264 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2025-06-29 00:24:27.036 [restartedMain] [INFO] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-29 00:24:27.066 [restartedMain] [INFO] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-29 00:24:27.070 [restartedMain] [INFO] o.a.c.c.StandardService - Starting service [Tomcat]
+2025-06-29 00:24:27.071 [restartedMain] [INFO] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-29 00:24:27.224 [restartedMain] [INFO] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2025-06-29 00:24:27.225 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5048 ms
+2025-06-29 00:24:27.894 [restartedMain] [INFO] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-29 00:24:28.029 [restartedMain] [INFO] o.h.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-29 00:24:28.108 [restartedMain] [INFO] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-29 00:24:28.891 [restartedMain] [INFO] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-29 00:24:28.975 [restartedMain] [INFO] c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2025-06-29 00:24:29.567 [restartedMain] [INFO] c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a38ce4a
+2025-06-29 00:24:29.572 [restartedMain] [INFO] c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-29 00:24:29.691 [restartedMain] [WARN] o.h.o.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-29 00:24:29.693 [restartedMain] [WARN] o.h.o.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-29 00:24:29.734 [restartedMain] [INFO] o.h.o.c.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-29 00:24:32.279 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-29 00:24:32.529 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-29 00:24:34.782 [restartedMain] [INFO] o.s.d.j.r.q.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-29 00:24:37.178 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-29 00:24:37.320 [restartedMain] [INFO] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-06-29 00:24:37.914 [restartedMain] [INFO] o.s.b.a.e.w.EndpointLinksResolver - Exposing 14 endpoints beneath base path '/actuator'
+2025-06-29 00:24:38.000 [restartedMain] [WARN] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Found 2 UserDetailsService beans, with names [customUserDetailService, customUserDetailsService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-06-29 00:24:38.993 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-29 00:24:39.074 [restartedMain] [INFO] o.s.m.s.b.SimpleBrokerMessageHandler - Starting...
+2025-06-29 00:24:39.075 [restartedMain] [INFO] o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4fe4691d]]
+2025-06-29 00:24:39.076 [restartedMain] [INFO] o.s.m.s.b.SimpleBrokerMessageHandler - Started.
+2025-06-29 00:24:39.077 [restartedMain] [INFO] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-29 00:24:39.102 [restartedMain] [INFO] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-29 00:24:39.845 [restartedMain] [INFO] o.e.b.BackendProjectApplication - Started BackendProjectApplication in 19.4 seconds (process running for 21.74)
+2025-06-29 00:24:40.448 [RMI TCP Connection(3)-172.30.1.67] [INFO] o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-29 00:24:40.449 [RMI TCP Connection(3)-172.30.1.67] [INFO] o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-29 00:24:40.452 [RMI TCP Connection(3)-172.30.1.67] [INFO] o.s.w.s.DispatcherServlet - Completed initialization in 3 ms
+2025-06-29 00:24:41.769 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:24:46.629 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:24:51.630 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:24:56.626 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:25:01.623 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:25:06.621 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:25:11.620 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:25:16.617 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:25:21.619 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:25:26.614 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:25:31.613 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:25:36.612 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:25:39.028 [MessageBroker-1] [INFO] o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2025-06-29 00:25:41.608 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:25:46.607 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:25:51.605 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:25:56.603 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:26:01.601 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:26:06.600 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:26:11.598 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:26:16.597 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:26:21.594 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:26:26.601 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:26:31.595 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:26:36.597 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:26:41.596 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:26:46.593 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:26:51.590 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:26:56.589 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:27:01.592 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:27:06.586 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:27:11.584 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:27:16.583 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:27:21.581 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:27:26.579 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:27:31.579 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:27:36.577 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:27:41.579 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:27:46.577 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:27:51.574 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:27:56.573 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:28:01.571 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:28:06.569 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:28:11.569 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:28:16.567 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:28:21.565 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:28:26.564 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:28:31.561 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:28:36.560 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:28:41.559 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:28:46.560 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:28:51.558 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:28:56.557 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:29:01.553 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:29:06.553 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:29:11.553 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:29:16.551 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:29:21.548 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:29:26.548 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:29:31.546 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:29:36.546 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:29:41.544 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:29:46.543 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:29:51.546 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:29:56.539 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:30:01.542 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:30:06.537 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:30:11.535 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:30:16.533 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:30:21.533 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:30:26.534 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:30:31.531 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:30:36.529 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:30:41.531 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:30:46.528 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:30:51.529 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:30:56.526 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:31:01.524 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:31:06.524 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:31:11.523 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:31:16.521 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:31:21.521 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:31:26.519 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:31:31.517 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:31:36.516 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:31:41.513 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:31:46.515 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:31:51.513 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:31:56.511 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:32:01.511 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:32:06.151 [File Watcher] [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 62 class path changes (0 additions, 62 deletions, 0 modifications)
+2025-06-29 00:32:06.191 [Thread-6] [INFO] o.s.b.w.e.t.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-29 00:32:06.194 [tomcat-shutdown] [INFO] o.a.c.h.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-06-29 00:32:06.580 [tomcat-shutdown] [INFO] o.s.b.w.e.t.GracefulShutdown - Graceful shutdown complete
+2025-06-29 00:32:06.580 [Thread-6] [INFO] o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-06-29 00:32:06.584 [Thread-6] [INFO] o.s.m.s.b.SimpleBrokerMessageHandler - Stopping...
+2025-06-29 00:32:06.584 [Thread-6] [INFO] o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4fe4691d]]
+2025-06-29 00:32:06.584 [Thread-6] [INFO] o.s.m.s.b.SimpleBrokerMessageHandler - Stopped.
+2025-06-29 00:32:06.722 [Thread-6] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-29 00:32:06.726 [Thread-6] [INFO] c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-29 00:32:06.750 [Thread-6] [INFO] c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-29 00:32:06.882 [restartedMain] [INFO] o.e.b.BackendProjectApplication - Starting BackendProjectApplication using Java 17.0.12 with PID 21420 (started by win11 in C:\backend5)
+2025-06-29 00:32:06.882 [restartedMain] [INFO] o.e.b.BackendProjectApplication - The following 1 profile is active: "dev"
+2025-06-29 00:32:07.257 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-29 00:32:07.257 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-29 00:32:07.258 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-06-29 00:32:07.262 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-29 00:32:07.262 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-06-29 00:32:07.263 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 0 ms. Found 0 Redis repository interfaces.
+2025-06-29 00:32:07.377 [restartedMain] [INFO] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-29 00:32:07.377 [restartedMain] [INFO] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-29 00:32:07.378 [restartedMain] [INFO] o.a.c.c.StandardService - Starting service [Tomcat]
+2025-06-29 00:32:07.378 [restartedMain] [INFO] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-29 00:32:07.402 [restartedMain] [INFO] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2025-06-29 00:32:07.402 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 518 ms
+2025-06-29 00:32:07.463 [restartedMain] [INFO] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-29 00:32:07.467 [restartedMain] [INFO] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-29 00:32:07.481 [restartedMain] [INFO] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-29 00:32:07.482 [restartedMain] [INFO] c.z.h.HikariDataSource - HikariPool-2 - Starting...
+2025-06-29 00:32:07.521 [restartedMain] [INFO] c.z.h.p.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4181b283
+2025-06-29 00:32:07.521 [restartedMain] [INFO] c.z.h.HikariDataSource - HikariPool-2 - Start completed.
+2025-06-29 00:32:07.522 [restartedMain] [WARN] o.h.o.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-29 00:32:07.522 [restartedMain] [WARN] o.h.o.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-29 00:32:07.522 [restartedMain] [INFO] o.h.o.c.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-29 00:32:07.546 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-29 00:32:07.546 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-29 00:32:07.573 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-29 00:32:07.942 [restartedMain] [INFO] o.s.b.a.e.w.EndpointLinksResolver - Exposing 14 endpoints beneath base path '/actuator'
+2025-06-29 00:32:07.966 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-29 00:32:07.983 [restartedMain] [INFO] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-29 00:32:07.987 [restartedMain] [INFO] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-29 00:32:07.995 [restartedMain] [INFO] o.e.b.BackendProjectApplication - Started BackendProjectApplication in 1.157 seconds (process running for 469.891)
+2025-06-29 00:32:08.007 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   LettuceConnectionConfiguration#redisConnectionFactory matched:
+      - @ConditionalOnMissingBean (types: org.springframework.data.redis.connection.RedisConnectionFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+      - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+
+   OAuth2ClientWebSecurityAutoConfiguration.OAuth2SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   RedisAutoConfiguration#redisTemplate matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.data.redis.connection.RedisConnectionFactory; SearchStrategy: all) found a single bean 'redisConnectionFactory'; @ConditionalOnMissingBean (names: redisTemplate; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   RedisReactiveAutoConfiguration#reactiveRedisTemplate matched:
+      - @ConditionalOnBean (types: org.springframework.data.redis.connection.ReactiveRedisConnectionFactory; SearchStrategy: all) found bean 'redisConnectionFactory'; @ConditionalOnMissingBean (names: reactiveRedisTemplate; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   RedisReactiveAutoConfiguration#reactiveStringRedisTemplate matched:
+      - @ConditionalOnBean (types: org.springframework.data.redis.connection.ReactiveRedisConnectionFactory; SearchStrategy: all) found bean 'redisConnectionFactory'; @ConditionalOnMissingBean (names: reactiveStringRedisTemplate; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   RedisReactiveHealthContributorAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.springframework.data.redis.connection.ReactiveRedisConnectionFactory', 'reactor.core.publisher.Flux' (OnClassCondition)
+      - @ConditionalOnEnabledHealthIndicator management.health.defaults.enabled is considered true (OnEnabledHealthIndicatorCondition)
+      - @ConditionalOnBean (types: org.springframework.data.redis.connection.ReactiveRedisConnectionFactory; SearchStrategy: all) found bean 'redisConnectionFactory' (OnBeanCondition)
+
+   RedisReactiveHealthContributorAutoConfiguration#redisHealthContributor matched:
+      - @ConditionalOnMissingBean (names: redisHealthIndicator,redisHealthContributor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskExecutorConfigurations.AsyncConfigurerConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.scheduling.annotation.AsyncConfigurer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskExecutorConfigurations.AsyncConfigurerConfiguration#applicationTaskExecutorAsyncConfigurer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.scheduling.annotation.AsyncConfigurer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskExecutorConfigurations.TaskExecutorConfiguration matched:
+      - AnyNestedCondition 1 matched 1 did not; NestedCondition on TaskExecutorConfigurations.OnExecutorCondition.ModelCondition @ConditionalOnProperty (spring.task.execution.mode=force) did not find property 'spring.task.execution.mode'; NestedCondition on TaskExecutorConfigurations.OnExecutorCondition.ExecutorBeanCondition @ConditionalOnMissingBean (types: java.util.concurrent.Executor; SearchStrategy: all) did not find any beans (TaskExecutorConfigurations.OnExecutorCondition)
+
+   TaskExecutorConfigurations.TaskExecutorConfiguration#applicationTaskExecutor matched:
+      - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+
+
+Negative matches:
+-----------------
+
+   RedisHealthContributorAutoConfiguration#redisHealthContributor:
+      Did not match:
+         - @ConditionalOnMissingBean (names: redisHealthIndicator,redisHealthContributor; SearchStrategy: all) found beans named redisHealthContributor (OnBeanCondition)
+
+   TaskExecutorConfigurations.TaskExecutorConfiguration#applicationTaskExecutorVirtualThreads:
+      Did not match:
+         - @ConditionalOnThreading did not find VIRTUAL (OnThreadingCondition)
+
+   WebSocketMessagingAutoConfiguration.WebSocketMessageConverterConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.web.socket.config.annotation.DelegatingWebSocketMessageBrokerConfiguration,com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) did not find any beans of type org.springframework.web.socket.config.annotation.DelegatingWebSocketMessageBrokerConfiguration (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'com.fasterxml.jackson.databind.ObjectMapper', 'org.springframework.messaging.simp.config.AbstractMessageBrokerConfiguration' (OnClassCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2025-06-29 00:32:09.379 [File Watcher] [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 14 class path changes (0 additions, 14 deletions, 0 modifications)
+2025-06-29 00:32:09.380 [Thread-9] [INFO] o.s.b.w.e.t.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-29 00:32:09.381 [tomcat-shutdown] [INFO] o.a.c.h.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-06-29 00:32:09.713 [tomcat-shutdown] [INFO] o.s.b.w.e.t.GracefulShutdown - Graceful shutdown complete
+2025-06-29 00:32:09.713 [Thread-9] [INFO] o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-06-29 00:32:09.723 [Thread-9] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-29 00:32:09.723 [Thread-9] [INFO] c.z.h.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-06-29 00:32:09.737 [Thread-9] [INFO] c.z.h.HikariDataSource - HikariPool-2 - Shutdown completed.
+2025-06-29 00:33:01.052 [restartedMain] [INFO] o.e.b.BackendProjectApplication - Starting BackendProjectApplication using Java 17.0.12 with PID 21420 (C:\backend5\backendProject\build\classes\java\main started by win11 in C:\backend5)
+2025-06-29 00:33:01.052 [restartedMain] [INFO] o.e.b.BackendProjectApplication - The following 1 profile is active: "dev"
+2025-06-29 00:33:01.525 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-29 00:33:01.526 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-29 00:33:01.574 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 5 JPA repository interfaces.
+2025-06-29 00:33:01.583 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-29 00:33:01.583 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-06-29 00:33:01.595 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.backendproject.Auth.repository.AuthRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-29 00:33:01.595 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.backendproject.board.repository.BoardRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-29 00:33:01.595 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.backendproject.comment.repository.CommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-29 00:33:01.595 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.backendproject.purewebsocket.room.repository.RoomRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-29 00:33:01.595 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.backendproject.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-29 00:33:01.595 [restartedMain] [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2025-06-29 00:33:01.800 [restartedMain] [INFO] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-29 00:33:01.800 [restartedMain] [INFO] o.a.c.c.StandardService - Starting service [Tomcat]
+2025-06-29 00:33:01.801 [restartedMain] [INFO] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-29 00:33:01.864 [restartedMain] [INFO] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2025-06-29 00:33:01.865 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 812 ms
+2025-06-29 00:33:02.108 [restartedMain] [INFO] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-29 00:33:02.114 [restartedMain] [INFO] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-29 00:33:02.129 [restartedMain] [INFO] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-29 00:33:02.131 [restartedMain] [INFO] c.z.h.HikariDataSource - HikariPool-3 - Starting...
+2025-06-29 00:33:02.162 [restartedMain] [INFO] c.z.h.p.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7abcfc62
+2025-06-29 00:33:02.162 [restartedMain] [INFO] c.z.h.HikariDataSource - HikariPool-3 - Start completed.
+2025-06-29 00:33:02.164 [restartedMain] [WARN] o.h.o.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-29 00:33:02.164 [restartedMain] [WARN] o.h.o.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-29 00:33:02.164 [restartedMain] [INFO] o.h.o.c.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-29 00:33:02.370 [restartedMain] [INFO] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-29 00:33:02.464 [restartedMain] [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-29 00:33:03.192 [restartedMain] [WARN] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-29 00:33:03.255 [restartedMain] [INFO] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-06-29 00:33:03.502 [restartedMain] [INFO] o.s.b.a.e.w.EndpointLinksResolver - Exposing 14 endpoints beneath base path '/actuator'
+2025-06-29 00:33:03.545 [restartedMain] [WARN] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Found 2 UserDetailsService beans, with names [customUserDetailService, customUserDetailsService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-06-29 00:33:04.063 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-29 00:33:04.090 [restartedMain] [INFO] o.s.m.s.b.SimpleBrokerMessageHandler - Starting...
+2025-06-29 00:33:04.090 [restartedMain] [INFO] o.s.m.s.b.SimpleBrokerMessageHandler - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@62bba2a5]]
+2025-06-29 00:33:04.090 [restartedMain] [INFO] o.s.m.s.b.SimpleBrokerMessageHandler - Started.
+2025-06-29 00:33:04.098 [restartedMain] [INFO] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-29 00:33:04.187 [restartedMain] [INFO] o.e.b.BackendProjectApplication - Started BackendProjectApplication in 3.166 seconds (process running for 526.082)
+2025-06-29 00:33:04.191 [restartedMain] [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   RedisHealthContributorAutoConfiguration#redisHealthContributor matched:
+      - @ConditionalOnMissingBean (names: redisHealthIndicator,redisHealthContributor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebSocketMessagingAutoConfiguration.WebSocketMessageConverterConfiguration matched:
+      - @ConditionalOnClass found required classes 'com.fasterxml.jackson.databind.ObjectMapper', 'org.springframework.messaging.simp.config.AbstractMessageBrokerConfiguration' (OnClassCondition)
+      - @ConditionalOnBean (types: org.springframework.web.socket.config.annotation.DelegatingWebSocketMessageBrokerConfiguration,com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) found beans 'jacksonObjectMapper', 'org.springframework.web.socket.config.annotation.DelegatingWebSocketMessageBrokerConfiguration' (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   LettuceConnectionConfiguration#redisConnectionFactory:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.data.redis.connection.RedisConnectionFactory; SearchStrategy: all) found beans of type 'org.springframework.data.redis.connection.RedisConnectionFactory' redisConnectionFactory (OnBeanCondition)
+
+   OAuth2ClientWebSecurityAutoConfiguration.OAuth2SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' securityFilterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   RedisAutoConfiguration#redisTemplate:
+      Did not match:
+         - @ConditionalOnMissingBean (names: redisTemplate; SearchStrategy: all) found beans named redisTemplate (OnBeanCondition)
+
+   RedisReactiveAutoConfiguration#reactiveRedisTemplate:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.data.redis.connection.ReactiveRedisConnectionFactory; SearchStrategy: all) did not find any beans of type org.springframework.data.redis.connection.ReactiveRedisConnectionFactory (OnBeanCondition)
+
+   RedisReactiveAutoConfiguration#reactiveStringRedisTemplate:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.data.redis.connection.ReactiveRedisConnectionFactory; SearchStrategy: all) did not find any beans of type org.springframework.data.redis.connection.ReactiveRedisConnectionFactory (OnBeanCondition)
+
+   RedisReactiveHealthContributorAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.data.redis.connection.ReactiveRedisConnectionFactory; SearchStrategy: all) did not find any beans of type org.springframework.data.redis.connection.ReactiveRedisConnectionFactory (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'org.springframework.data.redis.connection.ReactiveRedisConnectionFactory', 'reactor.core.publisher.Flux' (OnClassCondition)
+         - @ConditionalOnEnabledHealthIndicator management.health.defaults.enabled is considered true (OnEnabledHealthIndicatorCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   TaskExecutorConfigurations.TaskExecutorConfiguration:
+      Did not match:
+         - AnyNestedCondition 0 matched 2 did not; NestedCondition on TaskExecutorConfigurations.OnExecutorCondition.ModelCondition @ConditionalOnProperty (spring.task.execution.mode=force) did not find property 'spring.task.execution.mode'; NestedCondition on TaskExecutorConfigurations.OnExecutorCondition.ExecutorBeanCondition @ConditionalOnMissingBean (types: java.util.concurrent.Executor; SearchStrategy: all) found beans of type 'java.util.concurrent.Executor' clientInboundChannelExecutor, clientOutboundChannelExecutor, brokerChannelExecutor (TaskExecutorConfigurations.OnExecutorCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2025-06-29 00:33:06.526 [http-nio-8080-exec-1] [INFO] o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-29 00:33:06.526 [http-nio-8080-exec-1] [INFO] o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-29 00:33:06.527 [http-nio-8080-exec-1] [INFO] o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+2025-06-29 00:33:06.529 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:33:11.498 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:33:16.498 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:33:21.496 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:33:26.496 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:33:31.495 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:33:36.495 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:33:41.498 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:33:46.495 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:33:51.494 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:33:56.492 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:34:01.492 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:34:04.081 [MessageBroker-1] [INFO] o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2025-06-29 00:34:06.491 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:34:11.491 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:34:16.492 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:34:21.488 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:34:26.489 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:34:31.487 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:34:36.488 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:34:41.487 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:34:46.488 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:34:51.486 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:34:56.485 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:35:01.485 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:35:06.486 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:35:11.486 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:35:16.484 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:35:21.482 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:35:26.481 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:35:31.482 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:35:36.481 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:35:41.478 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:35:46.478 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:35:51.478 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:35:56.478 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:36:01.477 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:36:06.475 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:36:11.475 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:36:16.476 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:36:21.474 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:36:26.478 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:36:31.473 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:36:36.471 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:36:41.473 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:36:46.472 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:36:51.470 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:36:56.469 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:37:01.469 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:37:06.472 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:37:11.467 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:37:16.468 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:37:21.467 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:37:26.467 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:37:31.467 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:37:36.466 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:37:41.464 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:37:46.464 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:37:51.462 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:37:56.462 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:38:01.461 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:38:06.462 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:38:11.460 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:38:16.462 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:38:21.459 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:38:26.458 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:38:31.459 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:38:36.456 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:38:41.456 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:38:46.455 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:38:51.455 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:38:56.454 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:39:01.455 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:39:06.454 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:39:11.454 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:39:16.453 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:39:21.452 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:39:26.450 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:39:31.451 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:39:36.451 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:39:41.452 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:39:46.447 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:39:51.448 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:39:56.448 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:40:01.447 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:40:06.446 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:40:11.446 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:40:16.445 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:40:21.443 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:40:26.443 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:40:31.442 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:40:36.443 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:40:41.441 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:40:46.441 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:40:51.440 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:40:56.440 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:41:01.439 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:41:06.439 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:41:11.437 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:41:16.436 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:41:21.436 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:41:26.456 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:41:31.434 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:41:36.436 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:41:41.435 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:41:46.434 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:41:51.434 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:41:56.434 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:42:01.432 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:42:06.432 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:42:11.431 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:42:16.431 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:42:21.428 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:42:26.429 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:42:31.430 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:42:36.426 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:42:41.431 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:42:46.427 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:42:51.428 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:42:56.425 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:43:01.426 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:43:06.422 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:43:11.424 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:43:16.422 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:43:21.421 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:43:26.420 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:43:31.423 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:43:36.419 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:43:41.420 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:43:46.420 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:43:51.419 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:43:56.418 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:44:01.417 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:44:06.416 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:44:11.415 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:44:16.415 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:44:21.415 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:44:26.415 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:44:31.415 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:44:36.414 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:44:41.411 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:44:46.412 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:44:51.409 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:44:56.411 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:45:01.410 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:45:06.411 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:45:11.409 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:45:16.407 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:45:21.407 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:45:26.407 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:45:31.406 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:45:36.406 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:45:41.404 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:45:46.406 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:45:51.404 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:45:56.404 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:46:01.403 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:46:06.403 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:46:11.401 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:46:16.400 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:46:21.402 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:46:26.401 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:46:31.398 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:46:36.399 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:46:41.397 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:46:46.396 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:46:51.394 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:46:56.397 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:47:01.395 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:47:06.394 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:47:11.397 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:47:16.393 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:47:21.392 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:47:26.392 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:47:31.391 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:47:36.392 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:47:41.389 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:47:46.388 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:47:51.390 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:47:56.394 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:48:01.390 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:48:06.388 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:48:11.387 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:48:16.385 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:48:21.387 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:48:26.385 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:48:31.386 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:48:36.387 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:48:41.384 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:48:46.382 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:48:51.381 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:48:56.383 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:49:01.380 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:49:06.382 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:49:11.379 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:49:16.380 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:49:21.379 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:49:26.377 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:49:31.378 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:49:36.377 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:49:41.376 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:49:46.409 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:49:51.379 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:49:56.374 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:50:01.375 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:50:06.376 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:50:11.376 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:50:16.373 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:50:21.375 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:50:26.374 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:50:31.373 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:50:36.371 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:50:41.369 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:50:46.371 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:50:51.370 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:50:56.370 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:51:01.369 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:51:06.369 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:51:11.368 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:51:16.368 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:51:21.367 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:51:26.367 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:51:31.367 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:51:36.365 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:51:41.364 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:51:46.364 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:51:51.364 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:51:56.363 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:52:01.363 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:52:06.361 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:52:11.360 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:52:16.360 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:52:21.360 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:52:26.361 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:52:31.358 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:52:36.359 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:52:41.358 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:52:46.358 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:52:51.357 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:52:56.358 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:53:01.357 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:53:06.358 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:53:11.356 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:53:16.354 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:53:21.356 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:53:26.354 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:53:31.355 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:53:36.354 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:53:41.353 [http-nio-8080-exec-8] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:53:46.352 [http-nio-8080-exec-9] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:53:51.351 [http-nio-8080-exec-10] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:53:56.351 [http-nio-8080-exec-1] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:54:01.351 [http-nio-8080-exec-4] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:54:06.352 [http-nio-8080-exec-3] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:54:11.349 [http-nio-8080-exec-2] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:54:16.349 [http-nio-8080-exec-5] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:54:21.350 [http-nio-8080-exec-6] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
+2025-06-29 00:54:26.349 [http-nio-8080-exec-7] [INFO] o.e.b.s.j.JwtTokenFilter - ❌ 토큰 없음 또는 유효하지 않음: null
