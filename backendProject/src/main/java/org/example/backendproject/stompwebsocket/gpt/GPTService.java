@@ -2,6 +2,7 @@ package org.example.backendproject.stompwebsocket.gpt;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import java.net.http.HttpResponse;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @Service
 public class GPTService {
     //json 문자열 <-> 자바객체, json 객체
@@ -47,7 +49,7 @@ public class GPTService {
 
             //문자열 JSON을 JsonNode로 파싱 : JSON구조에 직접 접근해서 원하는 값을 추출하기 위해
             JsonNode jsonNode = mapper.readTree(response.body());
-            System.out.println("get 응답 : " + jsonNode);
+            log.info("get 응답 : " + jsonNode);
 
             //메시지 부분만 추출하여 반환(응답형태가 Json인데 json문자열 복잡함 -> 거기서 지피티의 대답만 추출)
             String gptMessageResponse = jsonNode.get("output").get(0).get("content").get(0).get("text").asText();
