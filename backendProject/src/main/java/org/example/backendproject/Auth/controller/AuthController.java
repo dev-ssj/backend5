@@ -10,6 +10,8 @@ import org.example.backendproject.Auth.dto.LoginResponseDTO;
 import org.example.backendproject.Auth.dto.SignUpRequestDTO;
 import org.example.backendproject.Auth.service.AuthService;
 import org.example.backendproject.user.dto.UserDTO;
+import org.example.backendproject.user.entity.User;
+import org.example.backendproject.user.repository.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,13 +29,8 @@ public class AuthController {
     /** 회원가입 **/
     @PostMapping("/signUp")
     public ResponseEntity<String> signUp(@RequestBody SignUpRequestDTO signUpRequestDTO){
-        try {
             authService.signUp(signUpRequestDTO);
             return ResponseEntity.ok("회원가입 성공");
-        }
-        catch(Exception e){
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage()); //401
-        }
     }
 
     /** 로그인 **/
