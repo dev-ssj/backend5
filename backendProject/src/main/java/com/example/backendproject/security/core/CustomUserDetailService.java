@@ -19,9 +19,10 @@ public class CustomUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String userid) throws UsernameNotFoundException {
         User user = userRepository.findByUserid(userid).orElseThrow(()-> new UsernameNotFoundException("해당 유저가 존재하지 않습니다 -> " + userid));
-        return new CustomUserDetails(user);
+        return new CustomUserDetails(user); //찾은 User 객체를 CustomUserDetails로 감싸서 반환
     }
 
+    // JWT로부터 추출한 사용자 ID로 DB에서 조회할 때 사용하는 메서드
     public UserDetails loadUserById(Long id) throws UsernameNotFoundException {
         User user = userRepository.findById(id).orElseThrow(()-> new UsernameNotFoundException("해당 유저가 존재하지 않습니다 -> " + id));
         return new CustomUserDetails(user);

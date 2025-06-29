@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 @RequiredArgsConstructor
+/* 스프링 시큐리티에서 요구하는 사용자 정보 구조를 구현하는 클래스 */
 public class CustomUserDetails implements UserDetails {
 
     //UserDetails : 사용자 정보를 담는 인터페이스
@@ -18,7 +19,7 @@ public class CustomUserDetails implements UserDetails {
 
     private final User user;
 
-    @Override
+    @Override       //유저의 권한을 GrantedAuthority타입으로 변환(ROLE_USER, ROLE_ADMIN)
     public Collection<? extends GrantedAuthority> getAuthorities() {
         //User의 권한을 반환하는 메서드
         //Collections.singleton : 이 사용자는 한가지 권한만 갖는다는 의미

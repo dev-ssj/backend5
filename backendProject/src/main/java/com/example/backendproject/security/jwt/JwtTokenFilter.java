@@ -18,7 +18,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
-//http응답을 가로채서 검증을 하는 클래스
+//매 HTTP 요청마다 JWT 토큰을 검사하고, 유효한 경우 인증 처리까지 하는 필터
 @Component
 @RequiredArgsConstructor
 public class JwtTokenFilter extends OncePerRequestFilter {
@@ -37,17 +37,17 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 
         //요청 헤더에서 토큰 추출
         String accessToken = getTokenFromRequest(request);
+        //토큰이 존재하고, 유효성 검사를 통과했을 경우에 아래 코드 실행
         if(accessToken != null && jwtTokenProvider.validateToken(accessToken)){
-
-
             UsernamePasswordAuthenticationToken authenticationToken = getAuthentication(accessToken);
-            //토큰에서 사용자f를 꺼내서 사용자 인증 객체에 담는다.
+            //토큰에서 사용자를 꺼내서 사용자 인증 객체에 담는다.
 
             authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
             //http요청으로부터 부가정보(ip, 세션 등)을 추출해서 사용자 인증 객체에 넣어줌
             
             SecurityContextHolder.getContext().setAuthentication(authenticationToken);
             //토큰에서 사용자 인증정보를 조회해서 인증정보를 현재 스레드에 인증된 사용자로 등록
+            //이제 해당 요청은 인증된 사용자로 처리됨
 
             String url = request.getRequestURI().toString();
             String method = request.getMethod(); //"GET", "POST", "PUT"...
@@ -72,7 +72,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 
         String bearerToken = request.getHeader("Authorization");
         if(StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")){
-            token = bearerToken.substring(7);
+            token = bearerToken.substring(7);   //"Bearer " 제거 후 순수 토큰 반환
         }
 
         return token;
@@ -88,7 +88,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
         UserDetails userDetails = customUserDetailService.loadUserById(userid);
 
         return new UsernamePasswordAuthenticationToken(
-                userDetails,   //사용자 정보
+                userDetails,            //사용자 정보
                 null,                   //credential을 담는 부분 -> 이미 인증 되었기 떄문에 null
                 userDetails.getAuthorities()    //사용자의 권한
         );

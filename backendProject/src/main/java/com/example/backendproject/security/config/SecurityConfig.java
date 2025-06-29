@@ -15,8 +15,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 
-@Configuration      //설정 클래스 등록
-@EnableWebSecurity  //스프링 시큐리티 활성화
+@Configuration              //설정 클래스 등록
+@EnableWebSecurity          //스프링 시큐리티 활성화
 @RequiredArgsConstructor    //생성자 자동생성
 public class SecurityConfig {
 
@@ -26,7 +26,9 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-                .csrf(AbstractHttpConfigurer::disable)
+                .csrf(AbstractHttpConfigurer::disable)  //CSRF 비활성화. REST API라면 대부분 CSRF 필요 없음
+                //.permitAll() : 누구나 접근 가능(정적 자원, 로그인 요청 등)
+                //.authenticated() : 인증된 사용자만 접근 가능
                 .authorizeHttpRequests((auth) -> auth.requestMatchers("/","/index.html","/*.html","/favicon.ico",
                                         "/js/**", "/css/**",
                                         "/images/**", "/fetchWithAuth.js","/.well-known/**").permitAll() //인증 필요없이 모두 허용하는 경로
@@ -53,6 +55,8 @@ public class SecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 
                 //매 요청마다 적용할 필터
+                //UsernamePasswordAuthenticationFilter 이전에 jwtTokenFilter를 실행하도록 필터 체인에 등록
+                //즉 , 스프링 시큐리티가 내부적으로 인증을 시도하기 전에 먼저 우리가 만든 JWT 검사를 하도록 한다.
                 .addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();   //위 명시한 설정들을 적용
     }
@@ -62,4 +66,14 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
+
+    /*
+    * application.properties → jwtKey (SecretKey 생성)
+    * JwtTokenProvider (토큰 생성/검증)
+    * CustomUserDetails (User 감싸기)
+    * CustomUserDetailService (DB에서 User 찾기)
+    * JwtTokenFilter (요청마다 토큰 검사 후 인증 객체 등록)
+    * SecurityConfig (필터 체인과 인증 규칙 정의)
+    * Role (유저 권한 정의)
+    */
 }

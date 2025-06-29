@@ -35,11 +35,11 @@ public class JwtTokenProvider {
         //토큰이 발급되는 과정(user-id와 username도 포함)
         return Jwts.builder()
                 .setSubject(customUserDetails.getUsername())    //이 JWT 토큰의 주제를 지정
-                .setClaims(claims)  //payload
-                .setIssuedAt(new Date())    //토큰 발급 시간
-                .setExpiration(expiryDate)  //토큰 만료 시간
+                .setClaims(claims)                              //payload(사용자 정보)
+                .setIssuedAt(new Date())                        //토큰 발급 시간
+                .setExpiration(expiryDate)                      //토큰 만료 시간
                 .signWith(secretKey, SignatureAlgorithm.HS512)  //시크릿 키와 알고리즘을 이용해서 암호화하여 서명
-                .compact();  //<- 에서 저장한 정보들을 최종적으로 문자열로 만들어주는 메서드
+                .compact();  //<- 에서 저장한 정보들을 최종적으로 jwt 문자열로 만들어주는 메서드
     }
 
     //parseClaimsJws : 서명이 있는 토큰
@@ -47,10 +47,10 @@ public class JwtTokenProvider {
     //JWT 토큰에서 사용자 ID를 추출하는 메서드
     public Long getUserIdFromToken(String token){
         return Jwts
-                .parserBuilder()            //jwt 토큰을 해석하겠다고 선언
-                .setSigningKey(secretKey)   //토큰을 검증하기 위해 비밀키 사용
-                .build()                    //해석할 준비 완료
-                .parseClaimsJws(token)  //전달 받은 토큰을 파싱
+                .parserBuilder()                //jwt 토큰을 해석하겠다고 선언
+                .setSigningKey(secretKey)       //토큰을 검증하기 위해 비밀키 사용
+                .build()                        //해석할 준비 완료
+                .parseClaimsJws(token)          //전달 받은 토큰을 파싱
                 .getBody()                      //파싱한 토큰의 payload 부분을 꺼내서
                 .get("user-id", Long.class);    //user-id를 반환
     }
@@ -61,7 +61,7 @@ public class JwtTokenProvider {
             Jwts.parserBuilder()
                     .setSigningKey(secretKey)
                     .build()
-                    .parseClaimsJws(token);
+                    .parseClaimsJws(token); //서명 검증 + 파싱
             return true;
         }catch (MalformedJwtException e){
             //토큰 형식이 잘못되었을 때
