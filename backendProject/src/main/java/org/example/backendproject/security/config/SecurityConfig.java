@@ -50,8 +50,8 @@ public class SecurityConfig {
                                 //인증 필요없음
                                 .requestMatchers("/","/index.html", "/*.html", "/favicon.ico",
                                         "/css/**", "/fetchWithAuth.js","/js/**", "/images/**",
-                                        "/.well-known/**").permitAll() // 정적 리소스 누구나 접근
-                                .requestMatchers("/boards/**",  "/boards","/api/comments/**").authenticated()
+                                        "/.well-known/**", "/boards/batchInsert").permitAll() // 정적 리소스 누구나 접근
+                                .requestMatchers("/boards/**",  "/boards","/api/comments/**").permitAll()
 
                                 //인증필요
                                 .requestMatchers(

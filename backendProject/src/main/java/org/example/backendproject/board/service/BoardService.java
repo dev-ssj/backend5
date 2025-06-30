@@ -6,6 +6,8 @@ import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.backendproject.board.dto.BoardDTO;
+import org.example.backendproject.board.elasticsearch.dto.BoardEsDocument;
+import org.example.backendproject.board.elasticsearch.service.BoardEsService;
 import org.example.backendproject.board.entity.Board;
 import org.example.backendproject.board.repository.BatchRepository;
 import org.example.backendproject.board.repository.BoardRepository;
@@ -16,6 +18,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -29,6 +32,9 @@ public class BoardService {
     private final UserRepository userRepository;
     private final BatchRepository batchRepository;
     private final EntityManager  em;
+
+    //엘라스틱 서치 Service
+    private final BoardEsService boardEsService;
 
 
     /** 글 등록 **/
@@ -50,7 +56,21 @@ public class BoardService {
         board.setContent(boardDTO.getContent());
         // 연관관계 매핑!
         board.setUser(user);
-        Board saved = boardRepository.save(board);
+        Board saved = boardRepository.save(board); //Mysql 저장 완료
+        
+        //엘라스틱 서치에 저장 시작
+        BoardEsDocument boardEsDocument = BoardEsDocument.builder()
+                .id(String.valueOf(board.getId()))
+                .title(board.getTitle())
+                .content(board.getContent())
+                .userId(board.getUser().getId())
+                .username(board.getUser().getUserProfile().getUsername())
+                .created_date(String.valueOf(board.getCreated_date()))
+                .updated_date(String.valueOf(board.getUpdated_date()))
+                .build();
+
+        boardEsService.save(boardEsDocument);
+        
 
         return toDTO(saved);
     }
@@ -74,6 +94,19 @@ public class BoardService {
         board.setContent(dto.getContent());
         boardRepository.save(board);
 
+        //엘라스틱 서치에 데이터 수정
+        BoardEsDocument boardEsDocument = BoardEsDocument.builder()
+                .id(String.valueOf(board.getId()))
+                .title(board.getTitle())
+                .content(board.getContent())
+                .userId(board.getUser().getId())
+                .username(board.getUser().getUserProfile().getUsername())
+                .created_date(String.valueOf(board.getCreated_date()))
+                .updated_date(String.valueOf(board.getUpdated_date()))
+                .build();
+
+        boardEsService.save(boardEsDocument);
+
         return toDTO(board);
     }
 
@@ -89,8 +122,10 @@ public class BoardService {
 
         if (!boardRepository.existsById(boardId))
             throw new IllegalArgumentException("게시글 없음: " + boardId);
-
+        //mysql 삭제
         boardRepository.deleteById(boardId);
+        //엘라스틱서치 삭제
+        boardEsService.deleteById(String.valueOf(boardId));
 
 
     }
@@ -124,8 +159,7 @@ public class BoardService {
         return dto;
     }
 
-
-
+    /** 배치작업 **/
 
     /** 배치작업 **/
     @Transactional
@@ -153,6 +187,23 @@ public class BoardService {
             // 1. MySQL로 INSERT
             batchRepository.batchInsert(batchList);
 
+            // 2. Mysql에 insert한 데이터를 다시 조회
+            List<BoardDTO> saveBoards = batchRepository.findByBatchKey(batchKey);
+
+            // 3.엘라스틱서치용으로변환
+            List<BoardEsDocument> documents = saveBoards.stream()
+                    .map(BoardEsDocument::from) //DTO -> 엘라스틱서치용dto로 변환
+                    .toList();
+
+            try {
+                // 4. 엘라스틱서치 bulk 인덱싱
+                boardEsService.bulkIndexInsert(documents);
+            }
+            catch (IOException e){
+                log.error("[BOARD][BATCH] ElasticSearch 벌크 인덱싱 실패:{}",e.getMessage(),e);
+            }
+
+
         }
 
         Long end = System.currentTimeMillis();
@@ -173,7 +224,7 @@ public class BoardService {
         }
 
         long end = System.currentTimeMillis();
-        log.info("JPA Board saveAll 저장 소요 시간(ms): " + (end - start));
+        System.out.println("JPA Board saveAll 저장 소요 시간(ms): " + (end - start));
     }
 
 

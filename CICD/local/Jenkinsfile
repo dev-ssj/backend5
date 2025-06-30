@@ -22,7 +22,8 @@ pipeline {
           steps {
             dir("${PROJECT_DIR}") {
               sh 'chmod +x gradlew'
-              sh './gradlew clean build'
+               sh 'sleep 10'
+              sh './gradlew clean build -Dspring.profiles.active=dev'
             }
           }
         }

@@ -19,13 +19,13 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 public class GlobalExceptionHandler {
 
     //컨트롤러에서 RuntimeException 에러가 발생했을때 이 메서드가 대신 처리하도록 매핑
-    @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<ErrorResponse> handleRuntimeException(RuntimeException e){
-        log.warn("런타임 예외 처리: {}", e.getMessage());
-        log.error("❗에러라구용!!! 유저업따구요!");
-        ErrorResponse errorResponse = new ErrorResponse(400, "에러 전달 메시지", e.getMessage());
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
-    }
+//    @ExceptionHandler(RuntimeException.class)
+//    public ResponseEntity<ErrorResponse> handleRuntimeException(RuntimeException e){
+//        log.warn("런타임 예외 처리: {}", e.getMessage());
+//        log.error("❗에러라구용!!! 유저업따구요!");
+//        ErrorResponse errorResponse = new ErrorResponse(400, "에러 전달 메시지", e.getMessage());
+//        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+//    }
 
         //커스텀 에러용ㄴ
 //    @ExceptionHandler(RuntimeException.class)
