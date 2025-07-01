@@ -9,10 +9,10 @@ services:
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml # [설정파일]
       - ./volumes/prometheus:/prometheus          # [데이터 볼륨]
-#    depends_on:
-#      - backend1
-#      - backend2
-#      - backend3
+    #    depends_on:
+    #      - backend1
+    #      - backend2
+    #      - backend3
     networks:
       - prod_server
 
@@ -28,7 +28,8 @@ services:
       - ./volumes/grafana:/var/lib/grafana  # [데이터 볼륨]
     networks:
       - prod_server
-#
+
+
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.12.0
     container_name: elasticsearch
@@ -47,7 +48,7 @@ services:
       - ./volumes/esdata:/usr/share/elasticsearch/data
     networks:
       - prod_server
-#
+
 
   kibana:
     image: docker.elastic.co/kibana/kibana:8.12.0
@@ -78,6 +79,41 @@ services:
       - elasticsearch
     networks:
       - prod_server
+
+  #Kafka 클러스터 코디네이터
+  #분산 시스템에서 여러 서버(노드)들의 상태와 설정을 ‘중앙에서 관리’해주는 시스템
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.6.0
+    container_name: zookeeper
+    restart: unless-stopped
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    networks:
+      - prod_server
+
+  #	Kafka 브로커
+  kafka:
+    image: confluentinc/cp-kafka:7.6.0
+    container_name: kafka
+    restart: unless-stopped
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    depends_on:
+      - zookeeper
+    networks:
+      - prod_server
+
 
 
 networks:

@@ -1,6 +1,9 @@
 package org.example.backendproject.board.elasticsearch.service;
 
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
+import co.elastic.clients.elasticsearch._types.SortOrder;
+import co.elastic.clients.elasticsearch._types.aggregations.StringTermsBucket;
+import co.elastic.clients.elasticsearch._types.aggregations.TermsAggregation;
 import co.elastic.clients.elasticsearch._types.query_dsl.*;
 import co.elastic.clients.elasticsearch.core.BulkRequest;
 import co.elastic.clients.elasticsearch.core.BulkResponse;
@@ -10,6 +13,7 @@ import co.elastic.clients.elasticsearch.core.bulk.BulkResponseItem;
 import co.elastic.clients.elasticsearch.core.search.Hit;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.example.backendproject.board.elasticsearch.controller.TopKeywordDTO;
 import org.example.backendproject.board.elasticsearch.dto.BoardEsDocument;
 import org.example.backendproject.board.elasticsearch.repository.BoardEsRepository;
 
@@ -109,6 +113,14 @@ public class BoardEsService {
                     .from(from)
                     .size(size)
                     .query(query)
+                    
+                    //정렬
+                    .sort(sort -> sort
+                            .field(f-> f
+                            .field("id")  //정렬 대상 필드명
+                            .order(SortOrder.Desc)  //최신순
+                            )
+                    )
             );
             // SearchResponse는 엘라스팃서치의 검색 결과를 담고 있는 응답 객체
             SearchResponse<BoardEsDocument> response =
@@ -172,14 +184,81 @@ public class BoardEsService {
                     }
                 }
             }
+        }
+    }
 
+    public List<String> getTopSearchKeyword() {
 
+        //TermsAggregation 엘라스틱 서치의 집계 메서드
+        TermsAggregation termsAggregation = TermsAggregation.of(t -> t
+                .field("keyword.keyword")   //집계 기준 필드
+                .size(10));                 //상위 10개만 불러오기
 
+        //집계 요청
+        SearchRequest request = SearchRequest.of(s -> s
+                .index("search-log-index")      //집계를 가져올 인덱스 이름
+                .size(0)                        //집계만 가져오고 검색 결과는 가져오지 않음
+                .aggregations("top_keywords", a -> a.terms(termsAggregation)) //인기 검색어 집계
+        );
 
+        try {
+            //검색 응답
+            SearchResponse<Void> response = client.search(request, Void.class);
+            return response.aggregations()//응답 결과에서 집계 결과만 꺼냄
+                    .get("top_keywords")       //위에서 내가 집계 요청한 이름
+                    .sterms()                   //String terms로 변환
+                    .buckets()                  //집계 결과 버킷 리스트
+                    .array()                    //버킷 리스트를 배열로 변환
+                    .stream()                   //배열을 스트림으로 변환
+                    .map(buket -> buket.key().stringValue())    //버킷의 key값을 문자열로 꺼냄
+                    .map(Object::toString)              //string으로 변환
+                    .collect(Collectors.toList());      //스트림 결과를 리스트로 반환
+
+        } catch (IOException e) {
+            throw new RuntimeException("검색어 통계 조회 중 오류 발생", e);
         }
 
-
-
     }
+
+//    //퍼센트, 슨위 포함 메서드
+//public List<TopKeywordDTO> getTopSearchKeyword() {
+//    TermsAggregation termsAggregation = TermsAggregation.of(t -> t
+//            .field("keyword.keyword")
+//            .size(10));
+//
+//    SearchRequest request = SearchRequest.of(s -> s
+//            .index("search-log-index")
+//            .size(0)
+//            .aggregations("top_keywords", a -> a.terms(termsAggregation)));
+//
+//    try {
+//        SearchResponse<Void> response = client.search(request, Void.class);
+//
+//        // 버킷 리스트 추출
+//        List<StringTermsBucket> buckets = response.aggregations()
+//                .get("top_keywords")
+//                .sterms()
+//                .buckets()
+//                .array();
+//
+//        // 전체 카운트 합계
+//        long totalCount = buckets.stream()
+//                .mapToLong(StringTermsBucket::docCount)
+//                .sum();
+//
+//        // 비율 포함하여 DTO 변환
+//        return buckets.stream()
+//                .map(bucket -> {
+//                    String keyword = bucket.key().stringValue();
+//                    long count = bucket.docCount();
+//                    double percentage = (totalCount == 0) ? 0.0 : ((double) count / totalCount) * 100.0;
+//                    return new TopKeywordDTO(keyword, count, Math.round(percentage * 100.0) / 100.0); // 소수점 2자리
+//                })
+//                .collect(Collectors.toList());
+//
+//    } catch (IOException e) {
+//        throw new RuntimeException("검색어 통계 조회 중 오류 발생", e);
+//    }
+//}
 
 }

@@ -1,5 +1,12 @@
 
+GET board-index/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
 
+delete board-index
 
 //전체 샤드 상태 보기
 GET /_cat/shards/board-index?v

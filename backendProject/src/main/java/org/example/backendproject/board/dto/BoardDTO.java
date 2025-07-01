@@ -1,10 +1,12 @@
 package org.example.backendproject.board.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDateTime;
 
@@ -27,7 +29,10 @@ public class BoardDTO {
 
     private String batchkey;
 
-    public BoardDTO(Long id, String title, String content,String username, Long user_id,  LocalDateTime created_date, LocalDateTime updated_date) {
+    @JsonProperty("view_count")
+    private Long viewCount = 0L;    //기본값 0
+
+    public BoardDTO(Long id, String title, String content,String username, Long user_id,  LocalDateTime created_date, LocalDateTime updated_date, Long viewCount) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -35,5 +40,6 @@ public class BoardDTO {
         this.user_id = user_id;
         this.created_date = created_date;
         this.updated_date = updated_date;
+        this.viewCount = viewCount;
     }
 }
